@@ -1,0 +1,2 @@
+- Launch instance in OpenStack: Steps
+- Errors while launching instances

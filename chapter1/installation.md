@@ -1,0 +1,4 @@
+- MIQ installation
+- MIQ appliance
+- start VM using libvirt: guide
+- ssh into VM

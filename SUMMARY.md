@@ -12,4 +12,8 @@
    * [Openstack Configuration](chapter2/openstack_config.md)
    * [Launch instance in OpenStack](chapter2/launch_instance.md)
    * [Integrate OpenStack with ManageIQ](chapter2/integration_with_MIQ.md)
+* [Chapter 3](chapter_3/README.md)
+   * [Automation Using Ansible](chapter_3/automation_using_ansible.md)
+   * [Embedded Ansible in ManageIQ](chapter_3/embedded_ansible.md)
+   * [Embedded Ansible using AWX](chapter_3/embedded_ansible_using_awx.md)
 

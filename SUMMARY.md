@@ -16,4 +16,8 @@
    * [Automation Using Ansible](chapter_3/automation_using_ansible.md)
    * [Embedded Ansible in ManageIQ](chapter_3/embedded_ansible.md)
    * [Embedded Ansible using AWX](chapter_3/embedded_ansible_using_awx.md)
+* [Chapter 4](chapter_4/README.md)
+   * [Service catalogs and user self-service portal](chapter_4/service_catalogs_and_user_self-service_portal.md)
+   * [Domain and Namespaces](chapter_4/domain_and_namespaces.md)
+   * [Creating a Ansible Service](chapter_4/creating_a_ansible_service.md)
 

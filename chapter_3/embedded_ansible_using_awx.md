@@ -2,18 +2,28 @@
 
 ### Background
 
-In ManageIQ Fine release, it is configured to use [Ansible Tower](https://www.ansible.com/products/tower) for Embedded Ansible role. Integrating Ansible Tower in ManageIQ requires a tower license.
+In ManageIQ Fine release, it is configured to use [Ansible
+Tower](https://www.ansible.com/products/tower) for Embedded Ansible
+role. Integrating Ansible Tower in ManageIQ requires a tower license.
 
 | Info | Procedure to setup Embedded Ansible in ManageIQ Fine version is described in [Setup Embedded Ansible](http://talk.manageiq.org/t/howto-setup-embedded-ansible/2291) |
 |------|:------|
 
-In Gaprindashvili release of ManageIQ, Ansible Tower is replaced by AWX for implementation of Embedded Ansible. [AWX](https://github.com/ansible/awx) is open source project around the Ansible Tower codebase. Unlike Ansible Tower, AWX doesn't requires license to be added for enabling Embedded Ansible in ManageIQ.
+In Gaprindashvili release of ManageIQ, Ansible Tower is replaced by AWX
+for implementation of Embedded Ansible.
+[AWX](https://github.com/ansible/awx) is open source project around the
+Ansible Tower codebase. Unlike Ansible Tower, AWX doesn't requires
+license to be added for enabling Embedded Ansible in ManageIQ.
 
 ### AWX inside ManageIQ Appliance
 
-AWX is deployed as group of containers inside ManageIQ appliance. EVM manage awx containers using the `docker-api` gem. When Embedded Ansible role is enabled on an appliance, it pulls latest awx docker images and run the containers.
+AWX is deployed as group of containers inside ManageIQ appliance. EVM
+manage awx containers using the `docker-api` gem. When Embedded Ansible
+role is enabled on an appliance, it pulls latest awx docker images and
+run the containers.
 
-To enlist docker images, type `docker images` in the terminal of ManageIQ appliance.
+To enlist docker images, type `docker images` in the terminal of
+ManageIQ appliance.
 
 ```
 [root@localhost ~]# docker images
@@ -24,8 +34,9 @@ docker.io/memcached          alpine              5c28baaba1e0        13 days ago
 docker.io/rabbitmq           3                   02c3edbcf3d1        3 weeks ago         126.9 MB
 ```
 
-These four docker images are necessary to start awx properly.
-AWX docker containers are linked together. To view the running containers, use `docker ps` command:
+These four docker images are necessary to start awx properly.  AWX
+docker containers are linked together. To view the running containers,
+use `docker ps` command:
 
 ```
 [root@localhost ~]# docker ps
@@ -42,7 +53,8 @@ CONTAINER ID        IMAGE                     COMMAND                  CREATED  
 
 #### AWX Containers Log
 
-After the containers are started, it is able to see their logs for monitoring awx progress.
+After the containers are started, it is able to see their logs for
+monitoring awx progress.
 
 To display logs in terminal, type command as follow:
 
@@ -54,7 +66,9 @@ To display logs in terminal, type command as follow:
 
 #### Access AWX Bash
 
-Sometimes, it is need to access bash for the containers like to check status of ansible job. To access the bash of awx_task, run `docker exec -it <container id> /bin/bash` command.
+Sometimes, it is need to access bash for the containers like to check
+status of ansible job. To access the bash of awx_task, run `docker exec
+-it <container id> /bin/bash` command.
 
 ```
 [root@localhost ~]# docker exec -it 88542be75c63 /bin/bash
@@ -65,4 +79,6 @@ favicon.ico  public    supervisord.pid	wsgi.py
 
 ```
 
-Path `/var/lib/awx/job_status/` in container stores the status of tower job.
+Path `/var/lib/awx/job_status/` in container stores the status of tower
+job.
+

@@ -12,7 +12,7 @@ After the integration of OpenStack provider with ManageIQ, It is the
 time to enable *EmbeddedAnsible* Server Role in Server Controls of
 ManageIQ.
 
-1. Navigate to **Administrator|EVM -> Configuration**. This will land
+1. Navigate to **Administrator|EVM &rarr; Configuration**. This will land
    you on the screen of *Server Settings*.
 
 2. Enable the EmbeddedAnsible server role.
@@ -30,7 +30,7 @@ ManageIQ will generate events about EmbeddedAnsible activation in
 notification section.
 
 You can check the status of the task in ManageIQ by navigating to
-**Administrator|EVM -> Tasks -> All Tasks tab**.
+**Administrator|EVM &rarr; Tasks &rarr; All Tasks tab**.
 
 You can also check that whether the EmbeddedAnsible role has started or
 not by `vmdb; rake evm:status`.
@@ -43,9 +43,9 @@ not by `vmdb; rake evm:status`.
 After the EmbeddedAnsible Server role has successfully started, we need
 to move ahead to add a git repository of playbooks.
 
-1. Navigate to **Automation -> Ansible -> Repositories** .
+1. Navigate to **Automation &rarr; Ansible &rarr; Repositories** .
 
-2. Walk to **Configuration -> Add New Repository** .
+2. Walk to **Configuration &rarr; Add New Repository** .
 
 3. Give an appropriate name to the repository.
 

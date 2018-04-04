@@ -16,8 +16,8 @@ working for Infrastructure-as-a-Service.
 
 To add a provider in ManageIQ, We need to login to ManageIQ dashboard.
 
-Navitage to **Compute -> Clouds -> Providers** and then go to
-**Configuration -> Add a New Cloud Provider**. This will land you on a
+Navitage to **Compute &rarr; Clouds &rarr; Providers** and then go to
+**Configuration &rarr; Add a New Cloud Provider**. This will land you on a
 new screen where you need to provide information about the provider to
 be integrated.
 

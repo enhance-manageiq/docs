@@ -1,10 +1,9 @@
 ## What is OpenStack?
 
-OpenStack is an [free and
-open-source](https://en.wikipedia.org/wiki/Free_and_open-source_software)
-cloud operating system, mostly deployed as Infrastructure-As-Provider in
-case of ManageIQ, which controls large pools of compute, storage, and
-networking resources throughout a data center.
+OpenStack is an free and open source cloud operating system, mostly
+deployed as Infrastructure-As-Provider in case of ManageIQ, which
+controls large pools of compute, storage, and networking resources
+throughout a data center.
 
 ##  Components of OpenStack
 
@@ -101,4 +100,4 @@ interface to OpenStack services including Nova, Swift, Keystone etc
 ## OpenStack Releases
 
 Please do checkout the releases at
-[OpenStack.org](https://releases.OpenStack.org/)
+[releases.openstack.org](https://releases.OpenStack.org/)

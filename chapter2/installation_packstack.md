@@ -4,7 +4,7 @@ We need to start with installation of OpenStack, We already studied the
 different components of OpenStack and now here we are going to install
 OpenStack with pike release using packstack.
 
-[Packstack](https://wiki.openstack.org/wiki/Packstack) is a utility that
+[Packstack](https://github.com/openstack/packstack) is a utility that
 uses puppet module to deploy various parts of OpenStack on multiple pre
 installed servers over SSH connection. Till date, it supports only
 CentOS and Red Hat Enterprise Linux (RHEL).

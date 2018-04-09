@@ -44,8 +44,8 @@ understand all the basic installations of the components. It also
 explains the problems faced with some attributes that will help you know
 the things better.
 
-The automation helps the globe lead the nation forward and work
-efficiently. The problem or error faced while working manually are
+The automation helps the globe to lead the nation forward and work
+efficiently. The problems or errors faced while working manually are
 eliminated by the automation procedure that helps to ease the process as
 well.
 
@@ -98,4 +98,3 @@ This symbol shows the issues or the problems faced in that section.
 
 | Note | This form shows up a specific note.|
 |------|:------|
-

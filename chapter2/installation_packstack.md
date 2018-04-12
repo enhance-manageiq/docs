@@ -84,8 +84,36 @@ The answer file is with a name like
 *packstack-answers-20171121-123456.txt*. This answer file is used for
 refering already set password and other credentials.
 
-We need to fire the command again but using the desired answer file as
-<br> `$ sudo packstack --answer-file <answer-file-name>`
+Configurations in the answer file can edit as required. Table
+showed here lists some configuration keys with their description.
+Configurations in answer file is provided as following form:
+
+```
+KEY=VALUE
+```
+
+See [answer file](packstack-answers-20171208-124656.txt) for full
+details.
+
+| Key | Value   | Description |
+|-----|:-------:|-------------|
+| CONFIG_GLANCE_INSTALL | y, n | Specify **y** to install OpenStack Image Service (Glance) |
+| CONFIG_CINDER_INSTALL | y, n | Specify **y** to install OpenStack Block storage (Cinder) |
+| CONFIG_NOVA_INSTALL   | y, n | Specify **y** to install OpenStack Compute (Nova) |
+| CONFIG_NEUTRON_INSTALL | y, n | Specify **y** to install OpenStack Networking (Neutron) |
+| CONFIG_HORIZON_INSTALL | y, n | Specify **y** to install OpenStack Dashboard (Horizon) |
+| CONFIG_SWIFT_INSTALL | y, n | Specify **y** to install OpenStack object storage (Swift) |
+| CONFIG_CEILOMETER_INSTALL | y, n | Specify **y** to install OpenStack Metering (Ceilometer) |
+| CONFIG_AODH_INSTALL | y, n | Specify **y** to install OpenStack Telemetry Alarming (Aodh) |
+| CONFIG_GNOCCHI_INSTALL | y, n | Specify **y** to install OpenStack Metering as a Service (gnocchi) |
+| CONFIG_PANKO_INSTALL | y, n | Specify **y** to install OpenStack Event Service (Panko). By default this is set to **n**|
+| CONFIG_KEYSTONE_API_VERSION | 'v2.0', 'v3' | Specify Identity service API version |
+
+Now run the command using desired answer file as,
+
+```
+$ sudo packstack --answer-file <answer-file-name>
+```
 
 And further everything went smoothly.
 

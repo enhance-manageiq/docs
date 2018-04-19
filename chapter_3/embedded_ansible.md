@@ -1,87 +1,94 @@
-# Embedded Ansible
+## Embedded Ansible
 
-In ManageIQ after release Fine, Ansible is embedded within ManageIQ
-itself. Before Fine release, automation was supported in ManageIQ but we
-had to write a Ruby script which uses custom domain.
+Since ManageIQ Fine release, automation has been easier in way that we
+just need to write Ansible playbooks for this. Embedded Ansible provides
+integrity to run playbooks.
 
-Since Fine release automation has been easier in way that we just need
-to write Ansible playbooks. Embedded Ansible provides integrity to run
-Playbooks.
-
-After the integration of OpenStack provider with ManageIQ, It is the
-time to enable *EmbeddedAnsible* Server Role in Server Controls of
+After the integration of OpenStack provider with ManageIQ, it is the
+time to enable *Embedded Ansible* server role in server controls of
 ManageIQ.
 
-1. Navigate to **Administrator|EVM &rarr; Configuration**. This will land
-   you on the screen of *Server Settings*.
+### Enable Embedded Ansible
 
-2. Enable the EmbeddedAnsible server role.
+To enable Embedded Ansible, follow this:
 
-3. Click the Save button to carry forward the changes.
+1. Navigate to **Administrator|EVM &rarr; Configuration** which is
+   present in upper right corner. This land us on the screen of *Server
+   Settings*.
+
+2. Turn on Embedded Ansible server role.
+
+3. Click the **Save** button to carry forward the changes.
 
 ![Fig 1-EmbeddedAnsible
-Role](../images/chapter3/EmbeddedAnsible_Role.png "EmbeddedAnsible
+Role](../images/chapter3/EmbeddedAnsible_Role.png "Embedded Ansible
 Role")
 
-| Note |This will take some time depending on the internet speed and appliance specifications.|
+| Note |This will take some time depending upon the internet speed and appliance specifications.|
 |------|:------|
 
-ManageIQ will generate events about EmbeddedAnsible activation in
+ManageIQ will generate event about Embedded Ansible activation in
 notification section.
 
-You can check the status of the task in ManageIQ by navigating to
-**Administrator|EVM &rarr; Tasks &rarr; All Tasks tab**.
+To check the status of the task by ManageIQ, navigating to
+**Administrator|EVM &rarr; Tasks** and click on **All Tasks** tab.
 
-You can also check that whether the EmbeddedAnsible role has started or
-not by `vmdb; rake evm:status`.
+We can also check that whether the Embedded Ansible role has started or
+not by executing command in appliance terminal:
+```
+$ vmdb; rake evm:status
+```
 
-| Warning |If the Server Role is not started, do check the `log/evm.log` and `log/automation.log` files after execution of `vmdb`.|
+| Warning |If the server role is not started, do check the `log/evm.log` and `log/automation.log` log files after execution of `vmdb` command.|
 |------|:------|
 
 ### Add Repository
 
-After the EmbeddedAnsible Server role has successfully started, we need
-to move ahead to add a git repository of playbooks.
+After the Embedded Ansible server role has successfully started, we can
+add a git repository of playbooks.
 
-1. Navigate to **Automation &rarr; Ansible &rarr; Repositories** .
+Perform following steps to add repository:
 
-2. Walk to **Configuration &rarr; Add New Repository** .
+1. Navigate to **Automation &rarr; Ansible &rarr; Repositories**.
 
-3. Give an appropriate name to the repository.
+2. Walk to **Configuration &rarr; Add New Repository**. This shows a form
+   to add repository details.
 
-4. Add a short description about what the repository is exactly.
+3. Give an appropriate **Name** to the repository.
 
-5. Choose the SCM type from the drop down list. By default, it is Git.
+4. Add **Description** about what the repository is exactly.
 
-6. Enter the URL of the repository to be added. In our case, we have
-   used a playbook that helps you create a instance, network, group, etc
-in OpenStack. Refer
+5. Choose the **SCM type** from the drop down list. By default, it is Git.
+
+6. Enter the **URL** of the repository to be added. In our case, we have
+   used playbooks that help us to create a instance, network in
+   OpenStack. Refer
 [this](https://github.com/psachin/openstack-ansible-inside) link for the
 playbook.
 
-7. Add the SCM credentials from the drop down list whichever is
+7. Add the **SCM credentials** from the drop down list whichever is
    appropriate.
 
-8. SCM Branch field should be filled with the name of the branch.
+8. **SCM Branch** field should be filled with the name of the branch.
 
-9. Check the appropriate box for any SCM Update Options.
+9. Check the appropriate box for any **SCM Update Options**.
 
-10. Click on Add button to save the changes.
+10. Click on **Add** button to save the changes.
 
 ![Fig 2-Add Repository](../images/chapter3/Add_Repo.png "Add
 Repository")
 
-Once the repository has been added successfully. You can see the files
-is the playbook in ManageIQ dashboard itself.
+When repository has been added successfully, we can see repository
+details in ManageIQ web portal itself.
 
-It shows all the information regarding the repository like the name,
-time, status, playbooks, etc. You can easily walk through it on a single
-click.
+ManageIQ shows all the information regarding the repository like the
+name, created on, status, playbooks, etc. You can easily walk through
+playbooks present in repository by clicking **Playbooks**.
 
 ![Fig 3-Repository Summary](../images/chapter3/Repo_Summary.png
 "Repository Summary")
 
-| Tip|To know more about Ansible modules for OpenStack, refer this link -> http://docs.ansible.com/ansible/latest/list_of_cloud_modules.html#openstack|
+| Tip|To know about available Ansible modules for OpenStack, refer this link: http://docs.ansible.com/ansible/latest/list_of_cloud_modules.html#openstack|
 |------|:------|
 
 <br>
@@ -90,20 +97,20 @@ click.
 
 ### Issue Faced
 
-The installation of ManageIQ - Fine was done with the integration of
-OpenStack Cloud provider but after enabling EmbeddedAnsible Server role,
+The installation of ManageIQ Fine was done with the integration of
+OpenStack Cloud provider. But after enabling Embedded Ansible Server role,
 we faced a issue for not starting that role and generation of lots of
 events.
 
-Later after checking the `evm.log` file we encountered that to setup
-embedded ansible we need enterprise licence in ManageIQ - Fine release
-as it uses Ansible Tower for automation.
+Later, after checking the `evm.log` file we encountered that to setup
+embedded ansible we need Ansible Tower enterprise license as ManageIQ
+Fine release uses Ansible Tower for automation.
 
-But as we didn't had any so we upgraded ManageIQ to its latest stable
-release Gaprindashvili-1 which use AWX. AWX is open source version of
-Ansible Tower.
+But as we didn't had any, so we upgrade ManageIQ to its latest stable
+release that is Gaprindashvili which uses AWX. AWX is open source
+version of Ansible Tower.
 
-So we shifted to ManageIQ - Gaprindashvili with the integration of
+So we shifted to ManageIQ Gaprindashvili with the integration of
 OpenStack.
 
 ---

@@ -26,7 +26,7 @@ To enlist docker images, type `docker images` in the terminal of
 ManageIQ appliance.
 
 ```
-[root@localhost ~]# docker images
+# docker images
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
 docker.io/ansible/awx_task   latest              e45b49c04679        4 days ago          1.017 GB
 docker.io/ansible/awx_web    latest              2340b2955aa4        4 days ago          989.5 MB
@@ -34,12 +34,12 @@ docker.io/memcached          alpine              5c28baaba1e0        13 days ago
 docker.io/rabbitmq           3                   02c3edbcf3d1        3 weeks ago         126.9 MB
 ```
 
-These four docker images are necessary to start awx properly.  AWX
+These four docker images are necessary to start awx properly. AWX
 docker containers are linked together. To view the running containers,
 use `docker ps` command:
 
 ```
-[root@localhost ~]# docker ps
+# docker ps
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                NAMES
 88542be75c63        ansible/awx_task:latest   "/tini -- /bin/sh -c "   3 hours ago         Up 3 hours          8052/tcp                             awx_task
 8cfc034ebffb        ansible/awx_web:latest    "/tini -- /bin/sh -c "   3 hours ago         Up 3 hours          0.0.0.0:54321->8052/tcp              awx_web
@@ -48,7 +48,7 @@ CONTAINER ID        IMAGE                     COMMAND                  CREATED  
 
 ```
 
-| Note | If `docker ps` command doesn't display these containers then check the status of 'EmbeddedAnsibleWorker' using `cd vmdb; rake evm:status`. Make sure that its status is started.  |
+| Note | If `docker ps` command doesn't display these containers then check the status of 'EmbeddedAnsibleWorker' using `vmdb; rake evm:status`. Make sure that its status is started.  |
 |------|:------|
 
 #### AWX Containers Log
@@ -59,8 +59,7 @@ monitoring awx progress.
 To display logs in terminal, type command as follow:
 
 ```
-# Tail the awx_task log
-[root@localhost ~]# docker logs -f awx_task
+# docker logs -f awx_task
 
 ```
 
@@ -71,7 +70,7 @@ status of ansible job. To access the bash of awx_task, run `docker exec
 -it <container id> /bin/bash` command.
 
 ```
-[root@localhost ~]# docker exec -it 88542be75c63 /bin/bash
+# docker exec -it 88542be75c63 /bin/bash
 [root@awx awx]# ls
 beat.db      projects  supervisord.log	venv
 favicon.ico  public    supervisord.pid	wsgi.py

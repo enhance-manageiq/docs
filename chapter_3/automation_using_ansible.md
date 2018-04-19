@@ -1,12 +1,10 @@
-# Automation Using Ansible
-
 ## Introduction to Ansible
 
 Ansible is an open source tool which serves for configuration
 management, orchestration, provisioning and deployments. It is developed
 using python and runs on Windows, Mac, and UNIX-like systems. The
 Ansible itself is agentless i.e you don't need to install any client
-side software.It uses SSH connections. Hence,if you have well-oiled SSH
+side software. It uses SSH connections. Hence, if you have well-oiled SSH
 setup, then you are roll up to use ansible in your environment. This
 also means that you can install it on only one machine and control your
 infrastructure from that machine itself.
@@ -16,9 +14,9 @@ infrastructure from that machine itself.
 Before ease of Ansible reached out to us, one was expected to be quite
 comfortable with Ruby scripting language and [Automate
 model](http://manageiq.org/docs/reference/latest/doc-Methods_Available_for_Automation/miq/index.html)
-to develop his own automation scripts. But, Now ManageIQ do provide
-various provisioning and service management processes. Thus, after Fine
-release, we can use Ansible playbooks for automation.
+to develop his own automation scripts. But, now ManageIQ do provide
+various provisioning and service management processes. Thus, after
+Manageiq Fine release, we can use Ansible playbooks for automation.
 
 ### Ansible Terms
 
@@ -31,19 +29,18 @@ JSON string to stdout before exiting.
 #### Playbooks
 
 Playbooks are Ansible’s configuration, deployment, and orchestration
-modelling language. Each playbook is composed of one or more plays in a
-list, and a play maps a group of hosts to one or more well defined roles
-or tasks.
+modeling language. Each playbook is composed of one or more plays in a
+list, and a play made up of group of tasks.
 
 #### Roles
 
-Roles provide Ansible with a way to load tasks, handlers, and variables
+Roles provides Ansible a way to load tasks, handlers, and variables
 from external files, based on a known file structure.
 
 #### Inventory
 
-An inventory defines a list of managed hosts that Ansible jobs can be
-run against. Inventories can contain groups which further sub-divide
+An inventory defines a list of manage hosts that Ansible jobs can be
+run against. Inventory can contain groups which further sub-divide
 hosts into logical collections of systems.
 
 #### Job and Job Template
@@ -59,8 +56,8 @@ be used.
 
 ### Ruby and Ansible
 
-Ansible is the quite simple and can  read its YAML-formatted playbooks.
-Automation can be done by both from Ansible playbooks from Automate and
+Ansible is the quite simple and easy to read its YAML-formatted playbooks.
+Automation can be done by both from Ansible playbooks from automate and
 developing own Ruby automation scripts. Ruby methods allow us to access
 and manipulate all of the objects and their properties within the VMDB.
 But it requires thorough understanding of Ruby scripting language and
